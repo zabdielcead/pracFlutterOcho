@@ -190,7 +190,12 @@ class _ProductoPageState extends State<ProductoPage>{
     
     
     if(producto.fotoUrl != null){
-      return Container();
+      return FadeInImage(
+        image: NetworkImage(producto.fotoUrl),
+        placeholder: AssetImage('assets/jar_loading.gif'),
+        height: 300.0,
+        fit: BoxFit.contain,
+      );
     } else {
 
       if(foto != null){
@@ -237,6 +242,7 @@ _procesarImagen(ImageSource origen)async{
    
     if (imagen != null){
       foto=File(imagen.path);
+
      
       //limpieza
     }
